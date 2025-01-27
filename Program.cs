@@ -1,10 +1,15 @@
-﻿namespace ConsoleApp1
+﻿using SFML.Graphics;
+
+namespace ConsoleApp1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+            GameController game = new GameController();
+
+            game.Run();
         }
     }
 }
