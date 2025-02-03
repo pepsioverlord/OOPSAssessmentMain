@@ -7,6 +7,7 @@ namespace ConsoleApp1
     {
         private RenderWindow gameWindow;
         private GameMap gameMap;
+        private SideView sideView;
         public GameController()
         {
             gameWindow = new RenderWindow(new SFML.Window.VideoMode(800, 600), "Assessment Game", SFML.Window.Styles.Close);
@@ -14,6 +15,8 @@ namespace ConsoleApp1
             gameWindow.KeyReleased += OnKeyReleased;
 
             gameMap = new GameMap();
+
+            sideView = new SideView();
         }
 
         private void OnClosed(object? sender, EventArgs e)
@@ -71,6 +74,7 @@ namespace ConsoleApp1
             gameWindow.Clear(new Color(200, 100, 150));
 
             gameMap.DrawMap(gameWindow);
+            sideView.DrawSideView(gameWindow);
 
             // Display
             gameWindow.Display();
